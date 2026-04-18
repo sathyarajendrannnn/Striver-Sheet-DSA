@@ -1,0 +1,15 @@
+class Solution {
+    public int[] replaceElements(int[] arr) {
+        int n = arr.length;
+        int[] ans = new int[n];
+
+        int maxRight = -1;
+
+        for (int i = n - 1; i >= 0; i--) {
+            ans[i] = maxRight;                 // replace with max on right
+            maxRight = Math.max(maxRight, arr[i]); // update max
+        }
+
+        return ans;
+    }
+}
